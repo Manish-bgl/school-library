@@ -4,7 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function StudentsTab({ t, theme, students, studentSearch, setStudentSearch, studentFilters, setStudentFilters, setStudentModalOpen, setStudentFormData, setSelectedStudent, handleDeleteStudent, handlePrintIdCard }) {
+export default function StudentsTab({ t, theme, students, studentSearch, setStudentSearch, studentFilters, setStudentFilters, setStudentModalOpen, setSelectedStudent, handleDeleteStudent, handlePrintIdCard }) {
   const tab = "students";
   return (
     <>

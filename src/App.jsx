@@ -1171,7 +1171,6 @@ export default function App() {
               bookFilters={bookFilters}
               setBookFilters={setBookFilters}
               setBookModalOpen={setBookModalOpen}
-              setBookFormData={setBookFormData}
               handleDeleteBook={handleDeleteBook}
               user={user}
             />
@@ -1187,7 +1186,6 @@ export default function App() {
               studentFilters={studentFilters}
               setStudentFilters={setStudentFilters}
               setStudentModalOpen={setStudentModalOpen}
-              setStudentFormData={setStudentFormData}
               setSelectedStudent={setSelectedStudent}
               handleDeleteStudent={handleDeleteStudent}
               handlePrintIdCard={handlePrintIdCard}
