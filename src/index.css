@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+}
+
+.accent-scope {
+  --accent-rgb: 245 158 11;
+}
+
+.accent-scope .bg-amber-500 {
+  background-color: rgb(var(--accent-rgb)) !important;
+}
+
+.accent-scope .bg-amber-500\/10 {
+  background-color: rgba(var(--accent-rgb), 0.1) !important;
+}
+
+.accent-scope .bg-amber-500\/15 {
+  background-color: rgba(var(--accent-rgb), 0.15) !important;
+}
+
+.accent-scope .bg-amber-500\/20 {
+  background-color: rgba(var(--accent-rgb), 0.2) !important;
+}
+
+.accent-scope .bg-amber-500\/30 {
+  background-color: rgba(var(--accent-rgb), 0.3) !important;
+}
+
+.accent-scope .bg-amber-500\/50 {
+  background-color: rgba(var(--accent-rgb), 0.5) !important;
+}
+
+.accent-scope .bg-amber-500\/70 {
+  background-color: rgba(var(--accent-rgb), 0.7) !important;
+}
+
+.accent-scope .text-amber-500 {
+  color: rgb(var(--accent-rgb)) !important;
+}
+
+.accent-scope .border-amber-500 {
+  border-color: rgb(var(--accent-rgb)) !important;
+}
+
+.accent-scope .border-amber-500\/20 {
+  border-color: rgba(var(--accent-rgb), 0.2) !important;
+}
+
+.accent-scope .shadow-amber-500\/20 {
+  --tw-shadow-color: rgba(var(--accent-rgb), 0.2) !important;
+}
+
+.accent-scope .shadow-amber-500\/25 {
+  --tw-shadow-color: rgba(var(--accent-rgb), 0.25) !important;
+}
+
+.accent-scope .shadow-amber-500\/30 {
+  --tw-shadow-color: rgba(var(--accent-rgb), 0.3) !important;
+}
+
+.accent-scope .from-amber-400 {
+  --tw-gradient-from: rgb(var(--accent-rgb)) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--accent-rgb), 0));
+}
+
+.accent-scope .from-amber-500 {
+  --tw-gradient-from: rgb(var(--accent-rgb)) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--accent-rgb), 0));
+}
+
+.accent-scope .from-amber-500\/80 {
+  --tw-gradient-from: rgba(var(--accent-rgb), 0.8) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--accent-rgb), 0));
+}
+
+.accent-scope .from-amber-500\/70 {
+  --tw-gradient-from: rgba(var(--accent-rgb), 0.7) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(var(--accent-rgb), 0));
+}
+
+.accent-scope .to-amber-300\/50 {
+  --tw-gradient-to: rgba(var(--accent-rgb), 0.5) !important;
+}
+
+select.select-white,
+select.select-white option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
+.accent-scope :focus-visible {
+  outline: 2px solid rgba(var(--accent-rgb), 0.8);
+  outline-offset: 2px;
+}
