@@ -4,7 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function IssuesTab({ t, theme, issues, books, students, issueFilters, setIssueFilters, scanType, setScanType, scannerActive, setScannerActive, videoRef, issueStudentId, setIssueStudentId, issueBookId, setIssueBookId, isScanned, handleIssueBook, handleReturnBook }) {
+export default function IssuesTab({ t, theme, issues, books, students, issueHistoryFilters, setIssueHistoryFilters, scanType, setScanType, scannerActive, setScannerActive, videoRef, issueStudentId, setIssueStudentId, issueBookId, setIssueBookId, isScanned, handleIssueBook, handleReturnBook }) {
   const tab = "issues";
   return (
     <>

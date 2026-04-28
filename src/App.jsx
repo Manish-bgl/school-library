@@ -1152,6 +1152,11 @@ export default function App() {
               t={t}
               theme={theme}
               stats={stats}
+              reportFilters={reportFilters}
+              setReportFilters={setReportFilters}
+              issues={issues}
+              students={students}
+              books={books}
               log={log}
               dashboardFocus={dashboardFocus}
               weeklyIssued={weeklyIssued}
@@ -1199,8 +1204,8 @@ export default function App() {
               issues={issues}
               books={books}
               students={students}
-              issueFilters={issueFilters}
-              setIssueFilters={setIssueFilters}
+              issueHistoryFilters={issueHistoryFilters}
+              setIssueHistoryFilters={setIssueHistoryFilters}
               scanType={scanType}
               setScanType={setScanType}
               scannerActive={scannerActive}
@@ -1236,6 +1241,8 @@ export default function App() {
               t={t}
               theme={theme}
               librarians={librarians}
+              librarianFilters={librarianFilters}
+              setLibrarianFilters={setLibrarianFilters}
               user={user}
               handleAddLibrarian={handleAddLibrarian}
               handleDeleteLibrarian={handleDeleteLibrarian}
@@ -1257,8 +1264,6 @@ export default function App() {
               t={t}
               theme={theme}
               log={log}
-              activityFilters={activityFilters}
-              setActivityFilters={setActivityFilters}
               stats={stats}
             />
           )}

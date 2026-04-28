@@ -4,7 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function ReportsTab({ t, theme, stats }) {
+export default function ReportsTab({ t, theme, stats, reportFilters, setReportFilters, issues, students, books }) {
   const tab = "reports";
   return (
     <>
