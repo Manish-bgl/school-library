@@ -1,11 +1,10 @@
 import React from "react";
-import { BookOpen, Search, Edit2, Trash2, Printer, MapPin, Users, RotateCcw, Activity, Shield, Settings, AlertCircle, Bell, RefreshCw, X, LogOut, TrendingUp, UserCheck, BarChart2, IndianRupee, Clock, Send } from "lucide-react";
+import { BookOpen, Search, Edit2, Trash2, Printer, MapPin, Users, RotateCcw, Activity, Shield, Settings, AlertCircle, Bell, RefreshCw, X, LogOut, TrendingUp, UserCheck, BarChart2, IndianRupee, Clock, Send, AlertTriangle, CheckCircle } from "lucide-react";
 import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
-import { fmt, calcFine } from "../../utils/helpers";
+import { fmt, calcFine, daysAgo } from "../../utils/helpers";
 
-export default function ReportsTab({ t, theme, stats, reportFilters, setReportFilters, issues, students, books }) {
-  const tab = "reports";
+export default function ReportsTab({ settings, toast, t, theme, stats, reportFilters, setReportFilters, issues, students, books, tab }) {
   return (
     <>
           {tab === "reports" && (

@@ -4,8 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function NotificationsTab({ t, theme, testNotifyReason, setTestNotifyReason, settings }) {
-  const tab = "notifications";
+export default function NotificationsTab({ bulkStudents, toast, overdueTargets, setNewArrivalWindow, newArrivalWindow, setBulkFineThreshold, bulkFineThreshold, sectionOptions, setBulkSection, bulkSection, classOptions, setBulkClass, bulkClass, books, students, issues, t, theme, testNotifyReason, setTestNotifyReason, settings, tab }) {
   return (
     <>
           {tab === "notifications" && (

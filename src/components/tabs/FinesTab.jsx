@@ -1,11 +1,10 @@
 import React from "react";
-import { BookOpen, Search, Edit2, Trash2, Printer, MapPin, Users, RotateCcw, Activity, Shield, Settings, AlertCircle, Bell, RefreshCw, X, LogOut, TrendingUp, UserCheck, BarChart2, IndianRupee, Clock, Send } from "lucide-react";
+import { BookOpen, Search, Edit2, Trash2, Printer, MapPin, Users, RotateCcw, Activity, Shield, Settings, AlertCircle, Bell, RefreshCw, X, LogOut, TrendingUp, UserCheck, BarChart2, IndianRupee, Clock, Send, AlertTriangle, CheckCircle, Gift } from "lucide-react";
 import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
-import { fmt, calcFine } from "../../utils/helpers";
+import { fmt, calcFine, todayStr } from "../../utils/helpers";
 
-export default function FinesTab({ t, theme, issues, students, books, fineFilters, setFineFilters, settings, calcFine, fmt }) {
-  const tab = "fines";
+export default function FinesTab({ toast, setFineStatus, setFineSort, setFineSearch, fineSort, fineSearch, fineStatus, fineView, setFineView, t, theme, issues, students, books, fineFilters, setFineFilters, settings, calcFine, fmt, tab }) {
   return (
     <>
           {tab === "fines" && (

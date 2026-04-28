@@ -1176,8 +1176,13 @@ export default function App() {
               bookFilters={bookFilters}
               setBookFilters={setBookFilters}
               setBookModalOpen={setBookModalOpen}
-              handleDeleteBook={handleDeleteBook}
               user={user}
+            
+              issues={issues}
+              setSelectedBook={setSelectedBook}
+              setTab={setTab}
+              toast={toast}
+              tab={tab}
             />
           )}
 
@@ -1192,8 +1197,15 @@ export default function App() {
               setStudentFilters={setStudentFilters}
               setStudentModalOpen={setStudentModalOpen}
               setSelectedStudent={setSelectedStudent}
-              handleDeleteStudent={handleDeleteStudent}
-              handlePrintIdCard={handlePrintIdCard}
+            
+              setStudentImportOpen={setStudentImportOpen}
+              issues={issues}
+              getStudentFine={getStudentFine}
+              getStudentActivity={getStudentActivity}
+              settings={settings}
+              openCard={openCard}
+              handleToggleStudentStatus={handleToggleStudentStatus}
+              tab={tab}
             />
           )}
 
@@ -1206,18 +1218,25 @@ export default function App() {
               students={students}
               issueHistoryFilters={issueHistoryFilters}
               setIssueHistoryFilters={setIssueHistoryFilters}
-              scanType={scanType}
-              setScanType={setScanType}
-              scannerActive={scannerActive}
-              setScannerActive={setScannerActive}
+              scanMode={scanMode}
+              setScanMode={setScanMode}
               videoRef={videoRef}
-              issueStudentId={issueStudentId}
-              setIssueStudentId={setIssueStudentId}
-              issueBookId={issueBookId}
-              setIssueBookId={setIssueBookId}
-              isScanned={isScanned}
-              handleIssueBook={handleIssueBook}
-              handleReturnBook={handleReturnBook}
+              handleScanIssue={handleScanIssue}
+              handleScanReturn={handleScanReturn}
+            
+              stopScan={stopScan}
+              setScanStudent={setScanStudent}
+              setScanBook={setScanBook}
+              scanStudent={scanStudent}
+              scanBook={scanBook}
+              setIssueView={setIssueView}
+              issueView={issueView}
+              issueHistorySearch={issueHistorySearch}
+              setIssueHistorySearch={setIssueHistorySearch}
+              parseStudentIdFromQr={parseStudentIdFromQr}
+              parseBookIdFromQr={parseBookIdFromQr}
+              settings={settings}
+              tab={tab}
             />
           )}
 
@@ -1233,6 +1252,17 @@ export default function App() {
               settings={settings}
               calcFine={calcFine}
               fmt={fmt}
+            
+              setFineView={setFineView}
+              fineView={fineView}
+              fineStatus={fineStatus}
+              fineSearch={fineSearch}
+              fineSort={fineSort}
+              setFineSearch={setFineSearch}
+              setFineSort={setFineSort}
+              setFineStatus={setFineStatus}
+              toast={toast}
+              tab={tab}
             />
           )}
 
@@ -1245,9 +1275,16 @@ export default function App() {
               setLibrarianFilters={setLibrarianFilters}
               user={user}
               handleAddLibrarian={handleAddLibrarian}
-              handleDeleteLibrarian={handleDeleteLibrarian}
               newLibrarian={newLibrarian}
               setNewLibrarian={setNewLibrarian}
+            
+              setLibrarianEditId={setLibrarianEditId}
+              setLibrarianModalOpen={setLibrarianModalOpen}
+              librarianSearch={librarianSearch}
+              setLibrarianSearch={setLibrarianSearch}
+              setCardLibrarian={setCardLibrarian}
+              setLibrarians={setLibrarians}
+              tab={tab}
             />
           )}
 
@@ -1256,6 +1293,10 @@ export default function App() {
               t={t}
               theme={theme}
               stats={stats}
+            
+              toast={toast}
+              settings={settings}
+              tab={tab}
             />
           )}
 
@@ -1265,6 +1306,22 @@ export default function App() {
               theme={theme}
               log={log}
               stats={stats}
+            
+              setActivityView={setActivityView}
+              activityView={activityView}
+              activitySearch={activitySearch}
+              setActivitySearch={setActivitySearch}
+              activityFilter={activityFilter}
+              setActivityFilter={setActivityFilter}
+              activityRange={activityRange}
+              setActivityRange={setActivityRange}
+              activityDateFrom={activityDateFrom}
+              setActivityDateFrom={setActivityDateFrom}
+              issues={issues}
+              students={students}
+              books={books}
+              user={user}
+              tab={tab}
             />
           )}
 
@@ -1275,6 +1332,24 @@ export default function App() {
               testNotifyReason={testNotifyReason}
               setTestNotifyReason={setTestNotifyReason}
               settings={settings}
+            
+              issues={issues}
+              students={students}
+              books={books}
+              bulkClass={bulkClass}
+              setBulkClass={setBulkClass}
+              classOptions={classOptions}
+              bulkSection={bulkSection}
+              setBulkSection={setBulkSection}
+              sectionOptions={sectionOptions}
+              bulkFineThreshold={bulkFineThreshold}
+              setBulkFineThreshold={setBulkFineThreshold}
+              newArrivalWindow={newArrivalWindow}
+              setNewArrivalWindow={setNewArrivalWindow}
+              overdueTargets={overdueTargets}
+              toast={toast}
+              bulkStudents={bulkStudents}
+              tab={tab}
             />
           )}
 
@@ -1286,9 +1361,19 @@ export default function App() {
               setActiveSettingsTab={setActiveSettingsTab}
               settings={settings}
               setSettings={setSettings}
-              toggleTheme={toggleTheme}
-              exportData={exportData}
-              handleDataImport={handleDataImport}
+              toggleTheme={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+              handleExportData={handleExportData}
+              handleImportData={handleImportData}
+            
+              isDir={isDir}
+              handleLogoUpload={handleLogoUpload}
+              backupText={backupText}
+              setBackupText={setBackupText}
+              books={books}
+              students={students}
+              issues={issues}
+              tab={tab}
+              accent={accent}
             />
           )}
         </main>

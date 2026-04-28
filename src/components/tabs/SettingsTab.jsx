@@ -4,8 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function SettingsTab({ t, theme, activeSettingsTab, setActiveSettingsTab, settings, setSettings, toggleTheme, exportData, handleDataImport }) {
-  const tab = "settings";
+export default function SettingsTab({ setBackupText, backupText, handleLogoUpload, isDir, t, theme, activeSettingsTab, setActiveSettingsTab, settings, setSettings, toggleTheme, handleExportData, handleImportData, books, students, issues, tab, accent }) {
   return (
     <>
           {tab === "settings" && (

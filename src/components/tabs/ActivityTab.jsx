@@ -4,8 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function ActivityTab({ t, theme, log, stats }) {
-  const tab = "activity";
+export default function ActivityTab({ books, students, issues, setActivityDateFrom, activityDateFrom, setActivityRange, activityRange, setActivityFilter, activityFilter, setActivitySearch, activitySearch, activityView, setActivityView, t, theme, log, stats, user, tab }) {
   return (
     <>
           {tab === "activity" && (

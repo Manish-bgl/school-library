@@ -4,8 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function BooksTab({ t, theme, books, bookSearch, setBookSearch, bookFilters, setBookFilters, setBookModalOpen, handleDeleteBook, user }) {
-  const tab = "books";
+export default function BooksTab({ toast, setTab, setSelectedBook, issues, t, theme, books, bookSearch, setBookSearch, bookFilters, setBookFilters, setBookModalOpen, user, tab }) {
   return (
     <>
           {tab === "books" && (

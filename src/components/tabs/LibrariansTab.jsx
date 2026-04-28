@@ -4,8 +4,7 @@ import { Badge, StatCard, Pg } from "../ui";
 import { Inp, Sel, Field, Lbl } from "../ui/Forms";
 import { fmt, calcFine } from "../../utils/helpers";
 
-export default function LibrariansTab({ t, theme, librarians, user, librarianFilters, setLibrarianFilters, handleAddLibrarian, handleDeleteLibrarian, newLibrarian, setNewLibrarian }) {
-  const tab = "librarians";
+export default function LibrariansTab({ setLibrarians, setCardLibrarian, setLibrarianSearch, librarianSearch, setLibrarianModalOpen, setLibrarianEditId, t, theme, librarians, user, librarianFilters, setLibrarianFilters, handleAddLibrarian, newLibrarian, setNewLibrarian, tab }) {
   return (
     <>
           {tab === "librarians" && (
