@@ -1293,7 +1293,11 @@ export default function App() {
               t={t}
               theme={theme}
               stats={stats}
-            
+              reportFilters={reportFilters}
+              setReportFilters={setReportFilters}
+              issues={issues}
+              students={students}
+              books={books}
               toast={toast}
               settings={settings}
               tab={tab}
