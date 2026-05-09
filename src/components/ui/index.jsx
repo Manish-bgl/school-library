@@ -22,7 +22,7 @@ export function Toast({ toasts, remove }) {
           ) : (
             <AlertCircle size={18} />
           )}
-          {t.msg}
+          {t.message}
           <button
             onClick={() => remove(t.id)}
             className="ml-auto opacity-70 hover:opacity-100 p-1"

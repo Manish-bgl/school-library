@@ -92,6 +92,25 @@ select.select-white option {
   color: #0f172a;
 }
 
+/* Fix: selected text invisible in dark mode inputs */
+.accent-scope input::selection,
+.accent-scope textarea::selection {
+  background-color: rgba(var(--accent-rgb), 0.4);
+  color: white;
+}
+
+/* Fix: dropdown options in dark mode */
+select option {
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+
+/* Light mode override */
+.light select option {
+  background-color: #ffffff;
+  color: #0f172a;
+}
+
 .accent-scope :focus-visible {
   outline: 2px solid rgba(var(--accent-rgb), 0.8);
   outline-offset: 2px;

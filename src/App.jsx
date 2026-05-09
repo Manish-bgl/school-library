@@ -129,7 +129,19 @@ export default function App() {
     if (useSupabaseAuth) return; // auth effect handles it when auth is on
     fetchAllData();
   }, [useSupabaseData]);
-  
+
+  // Persist settings to Supabase whenever they change (debounced 1s)
+  useEffect(() => {
+    if (!useSupabaseData) return;
+    const timer = setTimeout(async () => {
+      try {
+        const { error } = await supabase.from("settings").upsert({ id: 1, ...settings }, { onConflict: "id" });
+        if (error) console.warn("settings save failed:", error.message);
+      } catch (e) { console.warn("settings save error:", e); }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [settings, useSupabaseData]);
+
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [tab, setTab] = useState("dashboard");
   const [books, setBooks] = useState(SEED_BOOKS);
@@ -1124,6 +1136,13 @@ export default function App() {
             >
               <Menu size={17} />
             </button>
+            {settings.schoolLogo && (
+              <img
+                src={settings.schoolLogo}
+                alt="logo"
+                className="w-8 h-8 rounded-lg object-cover border border-white/10 shrink-0"
+              />
+            )}
             <div>
               <p className={`text-sm font-bold ${t.text}`}>{settings.schoolName}</p>
               <p className={`text-xs ${t.muted}`}>Library Management System</p>
