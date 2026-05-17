@@ -13,7 +13,7 @@ import { BrowserMultiFormatReader } from "@zxing/browser";
 
 import { T, ACCENTS, SEED_BOOKS, SEED_STUDENTS, SEED_ISSUES, SEED_LIBRARIANS, SEED_LOG, SEED_SETTINGS } from "./utils/constants";
 import { todayStr, genUUID, nameFromEmail, daysFromNow, daysAgo, fmt, calcFine, genId, validateStudentField, validateBookField, fetchOrCreateProfile } from "./utils/helpers";
-import { mapStudentToDB, mapStudentFromDB, mapBookToDB, mapBookFromDB, mapIssueToDB, mapIssueFromDB, resetCounters } from "./utils/mappers";
+import { mapStudentToDB, mapStudentFromDB, mapBookToDB, mapBookFromDB, mapIssueToDB, mapIssueFromDB, mapSettingsFromDB, mapSettingsToDB, resetCounters } from "./utils/mappers";
 import DashboardTab from "./components/tabs/DashboardTab";
 import BooksTab from "./components/tabs/BooksTab";
 import StudentsTab from "./components/tabs/StudentsTab";
@@ -38,6 +38,7 @@ export default function App() {
   const [user, setUser] = useState(null);
   const [managerAccount, setManagerAccount] = useState(null);
   const [managerReady, setManagerReady] = useState(true);
+  const [settings, setSettings] = useState(SEED_SETTINGS);
 
 
   const fetchAllData = async () => {
@@ -80,7 +81,7 @@ export default function App() {
 
     try {
       const { data, error } = await supabase.from("settings").select("*").limit(1);
-      if (!error && data?.[0]) setSettings(prev => ({ ...prev, ...data[0] }));
+      if (!error && data?.[0]) setSettings(prev => ({ ...prev, ...mapSettingsFromDB(data[0]) }));
       else if (error) console.warn("settings table:", error.message);
     } catch (e) { console.warn("settings fetch failed:", e); }
 
@@ -135,7 +136,7 @@ export default function App() {
     if (!useSupabaseData) return;
     const timer = setTimeout(async () => {
       try {
-        const { error } = await supabase.from("settings").upsert({ id: 1, ...settings }, { onConflict: "id" });
+        const { error } = await supabase.from("settings").upsert(mapSettingsToDB(settings), { onConflict: "id" });
         if (error) console.warn("settings save failed:", error.message);
       } catch (e) { console.warn("settings save error:", e); }
     }, 1000);
@@ -149,7 +150,6 @@ export default function App() {
   const [issues, setIssues] = useState(SEED_ISSUES);
   const [librarians, setLibrarians] = useState(SEED_LIBRARIANS);
   const [log, setLog] = useState(SEED_LOG);
-  const [settings, setSettings] = useState(SEED_SETTINGS);
   const [toasts, setToasts] = useState([]);
   const [backupText, setBackupText] = useState("");
   const [dashboardFocus, setDashboardFocus] = useState(null);
